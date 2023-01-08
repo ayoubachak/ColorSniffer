@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Color Sniffer",
+  "version": "1.0",
+  "description": "A simple extension that allows users to pick colors from a webpage.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+ "content_scripts":[
+  {
+    "matches":["*://*/*"],
+    "js":["content.js"]
+  }
+ ],
+ "action":{
+    "default_popup": "popup.html"
+  }
+
+}
